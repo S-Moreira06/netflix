@@ -1,0 +1,153 @@
+header {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+header.scrolled {
+    background: rgba(0, 0, 0, 0.9);
+}
+.logo {
+    height: 34px;
+}
+.navBlock {
+    display: flex;
+}
+.navList {
+    list-style: none;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    top: 60px;
+    left: 100px;
+    width: 110px;
+}
+
+.active a {
+    /* font-size: 3rem; */
+    flex-shrink: 1; /* Permet au texte de se réduire */
+    min-width: 0; /* Pour forcer le respect de "overflow" */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.navIcons {
+    display: flex;
+    justify-items: center;
+}
+
+.navIcon1 {
+    height: 28px;
+    margin: 0 10px;
+}
+
+.navIcon2 {
+    height: 21px;
+    width: 24px;
+    margin: 0 10px;
+
+}
+.navIcon3 {
+    padding-bottom: 10px;
+}
+.navList a {
+    margin: 0 10px;
+}
+.navList a:hover {
+    text-decoration: underline;
+}
+.dropdown {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.burger {
+    display: none;
+}
+.burgerActive {
+    display: flex;
+    width: 222px;
+    flex-direction: column;
+    position: absolute;
+    right: 5px;
+    top: 60px;
+    /* padding: 10px 20px; */
+    background: rgba(0, 0, 0, 0.777);
+}
+.burgerActive a:hover {
+    text-decoration: underline;
+}
+.burgerTop {
+    /* margin: 10px; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.burgerMain {
+    padding: 15px;
+}
+.burgerMain div {
+    margin-bottom: 5px;
+}
+.burgerIcon1 {
+    height: 28px;
+    margin-right: 10px;
+}
+.burgerIcon2 {
+    width: 22px;
+    margin-right: 10px;
+}
+.logout {
+    display: flex;
+    padding: 10px 28%;
+    border-top: 1px solid white;
+    /* margin:  10px -10px 5px -10px; */
+}
+/* Mediaquerry seulement pour les mobiles */
+@media screen and (max-width:700px) {
+    .active {
+        display: flex;
+        padding: 10px 20px;
+        background: rgba(0, 0, 0, 0.888);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+@media  screen and (min-width:700px) {
+    
+    .navList {
+        position: static;
+        display: flex;
+        flex-direction: row;
+        width: auto;
+        top: 10px;
+    }
+    .dropdown {
+        display: none;
+    }
+}
+/* @media  screen and (min-width:700px) {
+    
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        height: 70px;
+        max-width: 100%;
+        align-items: center;
+        margin: 10px 40px;
+    }
+    
+    
+    
+    
+    
+} */

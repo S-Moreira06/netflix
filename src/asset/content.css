@@ -1,0 +1,31 @@
+.caroussel {
+    display: flex;
+    gap: 5px;
+    overflow: scroll;  
+    margin-bottom: 10px;
+    scrollbar-width: none; /* Cache la barre sur Firefox */
+}
+.caroussel::-webkit-scrollbar {
+    display: none; /* Cache la barre de defilement sur Chrome, Edge et Safari */
+}
+.caroussel img {
+    height:80px;
+}
+@media  screen and (min-width:700px) {
+    .caroussel {
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .caroussel img {
+        height:124px;
+    }
+}
+
+@media  screen and (min-width:700px) {
+    .caroussel {
+        margin-bottom: 20px;
+    }
+    .caroussel img {
+        height:150px
+    }
+}

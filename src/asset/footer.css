@@ -1,0 +1,21 @@
+footer ul li{
+    list-style: none;
+}
+@media  screen and (min-width:700px) {
+    footer {
+        margin: 10px 80px;
+    }
+    
+    .footerIcon {
+        margin-right: 24px;
+    }
+    
+    footer ul li{
+        list-style: none;
+    }
+    
+    .footerListBlock {
+        display: flex;
+    }
+
+}
