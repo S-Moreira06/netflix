@@ -2,6 +2,7 @@
 import Caroussel from "../component/caroussel.js"
 import "../asset/content.css";
 
+
 function Content() {
     return (
         <div>
@@ -13,3 +14,5 @@ function Content() {
 };
 
 export default Content;
+
+

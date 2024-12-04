@@ -1,32 +1,65 @@
 import narcos from "../img/narcos.png";
 import "../asset/hero.css";
+import { useState, useEffect } from "react";
 
-function Hero () {
+function Hero() {
+    const [movie, setMovie] = useState(null); // Stocke les données récupérées
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const options = {
+                method: 'GET',
+                headers: {
+                    accept: 'application/json',
+                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YzlkN2FjMzA3NzMwMDZjZWUyNDAzZWYwMDIwZjU0MiIsIm5iZiI6MTczMzE0NTk4Ni4wNjQ5OTk4LCJzdWIiOiI2NzRkYjU4MjQ1NThkYWU0NDkzZGQ3MWMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.muvofxzJvbmiTX1zpKGhAff7bSVsDV3UJMBg6lY95Ew',
+                },
+            };
+            try {
+                const response = await fetch(
+                    'https://api.themoviedb.org/3/trending/movie/day?language=fr-FR',
+                    options
+                );
+                const result = await response.json();
+                if (result.results && result.results.length > 0) {
+                    setMovie(result.results[8]); // Stocke le premier film dans l'état
+                }
+            } catch (error) {
+                console.error('Erreur :', error);
+            }
+        };
+        fetchData(); // Déclenche l'appel API lors du montage
+    }, []); 
+
     return (
         <div className="hero">
-            <img src={narcos} alt="narcos" className="hero-bg"/>
+            <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="narcos" className="hero-bg" />
             <div className="hero-container">
-                
                 <div className="hero-desc">
-                    {/* j'aurai pu mettre h2 et h3 , mais je ne peux resister a honey */}
-                    <h1 className="hero-ntf"><span className="bold">NETFLIX</span> ORIGINAL</h1>
-                    <h2 className="bold hero-title">NARCOS</h2>
-                    <p className="bold">Regardez la saison 3 maintenant</p>
-                    <p>Le cartel de Cali reprend le pouvoir en Colombie. Les successeurs d'Escobar passent à l'action et déclarent la guerre au gouvernement.</p>
+                    <h1 className="hero-ntf">
+                        <span className="bold">NITFLEX</span> ORIGINAL
+                    </h1>
+                    {movie ? (
+                        <>
+                            <h2 className="bold hero-title">{movie.title}</h2>
+                            <p className="bold">{movie.overview}</p>
+                        </>
+                    ) : (
+                        <p>Chargement...</p>
+                    )}
                 </div>
                 <div className="hero-nav">
                     <div>
                         <img src="" alt="" />
-                        <a href="">Lecture</a>
+                        <a href="#">Lecture</a>
                     </div>
                     <div>
                         <img src="" alt="" />
-                        <a href="#">My List</a>
+                        <a href="#">Ma Liste</a>
                     </div>
                 </div>
             </div>
         </div>
     );
-};
+}
 
 export default Hero;
