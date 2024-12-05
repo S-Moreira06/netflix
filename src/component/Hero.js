@@ -21,7 +21,7 @@ function Hero() {
                 );
                 const result = await response.json();
                 if (result.results && result.results.length > 0) {
-                    setMovie(result.results[8]); // Stocke le premier film dans l'état
+                    setMovie(result.results[1]); // Stocke le premier film dans l'état
                 }
             } catch (error) {
                 console.error('Erreur :', error);
@@ -32,20 +32,16 @@ function Hero() {
 
     return (
         <div className="hero">
-            <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt="narcos" className="hero-bg" />
+            <img src={movie?.backdrop_path ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}` : narcos} alt="narcos" className="hero-bg" />
             <div className="hero-container">
                 <div className="hero-desc">
                     <h1 className="hero-ntf">
                         <span className="bold">NITFLEX</span> ORIGINAL
                     </h1>
-                    {movie ? (
-                        <>
-                            <h2 className="bold hero-title">{movie.title}</h2>
-                            <p className="bold">{movie.overview}</p>
-                        </>
-                    ) : (
-                        <p>Chargement...</p>
-                    )}
+                        <div>
+                            <h2 className="bold hero-title">{movie?.title ? movie.title : "NORCAS"}</h2>
+                            <p className="bold">{movie?.overview ? movie.overview : "NORCAS"}</p>
+                        </div>
                 </div>
                 <div className="hero-nav">
                     <div>
