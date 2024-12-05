@@ -57,7 +57,7 @@ function Navbar() {
                     Parcourir
                     <svg width="18" height="5" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="ic-dropdown">
-                            <path id="caret-down-white" fill-rule="evenodd" clip-rule="evenodd" d="M1.67989 1.434L17.5229 17.274C17.5829 17.337 17.6849 17.337 17.7449 17.274L33.5879 1.434C33.6869 1.335 33.6179 1.164 33.4739 1.164H1.79089C1.64989 1.164 1.58089 1.335 1.67989 1.434" fill="white"/>
+                            <path id="caret-down-white" fillRule="evenodd" clipRule="evenodd" d="M1.67989 1.434L17.5229 17.274C17.5829 17.337 17.6849 17.337 17.7449 17.274L33.5879 1.434C33.6869 1.335 33.6179 1.164 33.4739 1.164H1.79089C1.64989 1.164 1.58089 1.335 1.67989 1.434" fill="white"/>
                         </g>
                     </svg>
                 </div>
@@ -73,7 +73,7 @@ function Navbar() {
                     <img src={avatar} alt="" className="navIcon1"/>
                     <svg width="18" height="5" viewBox="0 0 36 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="navIcon3">
                         <g id="ic-dropdown">
-                            <path id="caret-down-white" fill-rule="evenodd" clip-rule="evenodd" d="M1.67989 1.434L17.5229 17.274C17.5829 17.337 17.6849 17.337 17.7449 17.274L33.5879 1.434C33.6869 1.335 33.6179 1.164 33.4739 1.164H1.79089C1.64989 1.164 1.58089 1.335 1.67989 1.434" fill="white"/>
+                            <path id="caret-down-white" fillRule="evenodd" clipRule="evenodd" d="M1.67989 1.434L17.5229 17.274C17.5829 17.337 17.6849 17.337 17.7449 17.274L33.5879 1.434C33.6869 1.335 33.6179 1.164 33.4739 1.164H1.79089C1.64989 1.164 1.58089 1.335 1.67989 1.434" fill="white"/>
                         </g>
                     </svg>
                 </div>
