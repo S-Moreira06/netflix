@@ -7,6 +7,8 @@ import transfert from "../img/transfert.png";
 import utilisateur from "../img/utilisateur.png";
 import interrogation from "../img/interrogation.png";
 import "../asset/navbar.css";
+import React from 'react';
+import { Link } from 'react-router';
 import { useState, useEffect } from "react";
 
 function Navbar() {
@@ -46,12 +48,12 @@ function Navbar() {
             <div className="navBlock">
                 <img src={logo} alt="Logo NitFlex" className="logo"/>
                 <nav className={dropdownActif == true  ? "navList active" : "navList"}>
-                    <a>Acceuil</a>
+                    <a><Link to="/">Accueil</Link></a>
                     <a>Séries</a>
                     <a>Films</a>
                     <a>Nouveautés les plus regardées</a>
                     <a>Ma liste</a>
-                    <a>Explorer la langue</a>
+                    <a><Link to="/about">À propos</Link></a>
                 </nav>
                 <div className="dropdown" onMouseOver={toggleDropdown}>
                     Parcourir

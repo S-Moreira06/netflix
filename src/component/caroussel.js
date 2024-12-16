@@ -8,12 +8,15 @@ function Caroussel (props) {
             <div className="caroussel">
                 {films.length > 0 ? (
                     films.map((film) => (
-                        <img
-                            key={film.id}
-                            src={film.backdrop_path ? `https://image.tmdb.org/t/p/w500${film.backdrop_path}` : vignette}
-                            alt={film.title || "Film"}
-                            className="vignette"
-                        />
+                        <div>
+                            <img
+                                key={film.id}
+                                src={film.backdrop_path ? `https://image.tmdb.org/t/p/w500${film.backdrop_path}` : vignette}
+                                alt={film.title || "Film"}
+                                className="vignette"
+                            />
+                            <p className="vignette-title">{film.title}</p>
+                        </div>
                     ))
                 ) : (
                     <p>Aucun film disponible</p>
